@@ -2,14 +2,27 @@ import cv2
 import numpy as np
 from skimage.transform import hough_line, hough_line_peaks
 from skimage.feature import canny
+from skimage.color import rgb2gray
+from skimage.filters import threshold_otsu
 import pytesseract
 from pytesseract import Output
 from scipy.stats import mode
+from scipy.ndimage import median_filter
+from skimage import  filters , io
+import matplotlib.pyplot as plt
+
  
 pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'  # your path may be different
 
-imgPath = '899.jpeg'
+imgPath = '8.jpeg'
 
+def binarizeImage(RGB_image):
+
+  image = rgb2gray(RGB_image)
+  threshold = threshold_otsu(image)
+  print('threshold:', threshold)
+  bina_image = image < threshold
+  return bina_image
 
 def rotate_image(image, angle):
     # Get image dimensions
@@ -88,28 +101,41 @@ def hough_transforms(image):
     rotated_image = rotate_image(image,  rotation_angle)
     
     # Save the rotated image
-    cv2.imwrite('out2.jpeg', rotated_image)
+    cv2.imwrite('hough_out.jpeg', rotated_image)
 
 
 def pytesseract_orientation(image_path):
     osd = None
+    image = cv2.imread(image_path)
+
     try:
         osd = pytesseract.image_to_osd(image_path, config=' --psm 0 -c min_characters_to_try=5', output_type=Output.DICT)
     except Exception as e:
         print("Error: " + str(e))
-        osd = pytesseract.image_to_osd(image_path, config=' --psm 0 -c min_characters_to_try=1', output_type=Output.DICT)
+        cv2.imwrite('correct_orient.jpeg', image)
+        return None
+        # osd = pytesseract.image_to_osd(image_path, config=' --psm 0 -c min_characters_to_try=1', output_type=Output.DICT)
     # osd = pytesseract.image_to_osd(image_path, config=' --psm 0 -c min_characters_to_try=5', output_type=Output.DICT)
     print("[OSD] " + str(osd))
-    image = cv2.imread(image_path)
     rotated = rotate_image(image, angle=osd["orientation"])
     # return rotated
-    cv2.imwrite('out1.jpeg', rotated)
+    cv2.imwrite('correct_orient.jpeg', rotated)
+
 
 if __name__ == '__main__':
      
 #   pytesseract_orientation(imgPath)
 #   hough_transforms(pytesseract_orientation(imgPath))
-  hough_transforms(image=cv2.imread(imgPath))
-  pytesseract_orientation('out2.jpeg')
+  outout_image=filters.median(cv2.imread(imgPath))
+  cv2.imwrite('filtered.jpeg', outout_image)
+
+#   hough_transforms(image=cv2.imread(imgPath))
+  hough_transforms(image=cv2.imread('filtered.jpeg'))
+  pytesseract_orientation('hough_out.jpeg')
+
+  temp = io.imread('correct_orient.jpeg')
+
+  bina_img = binarizeImage(temp)
+  plt.savefig('binarized.jpeg')
 
 
