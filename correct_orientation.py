@@ -128,18 +128,16 @@ def hough_transforms(image):
 
 def pytesseract_orientation(image_path):
     osd = None
-    image = cv2.imread(image_path)
 
     try:
         osd = pytesseract.image_to_osd(image_path, config=' --psm 0 -c min_characters_to_try=10', output_type=Output.DICT)
     except Exception as e:
         print("Error: " + str(e))
-        cv2.imwrite('correct_orient.jpeg', image)
-        return None
+        return image_path
         # osd = pytesseract.image_to_osd(image_path, config=' --psm 0 -c min_characters_to_try=1', output_type=Output.DICT)
     # osd = pytesseract.image_to_osd(image_path, config=' --psm 0 -c min_characters_to_try=5', output_type=Output.DICT)
     print("[OSD] " + str(osd))
-    rotated = rotate_image(image, angle=osd["orientation"])
+    rotated = rotate_image(image_path, angle=osd["orientation"])
     # return rotated
     # cv2.imwrite('correct_orient.jpeg', rotated)
     return rotated
