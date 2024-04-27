@@ -97,7 +97,7 @@ def hough_transforms(image):
             if np.isfinite(y0) and np.isfinite(y1):
                 cv2.line(lined_image, (0, int(y0)), (lined_image.shape[1], int(y1)), (0, 255, 0), 2)
 
-    cv2.imwrite('outlined.jpg', lined_image)
+    # cv2.imwrite('outlined.jpg', lined_image)
 
     # Print the detected angles
     print('Number of lines detected:', len(angles))
@@ -180,7 +180,10 @@ def process_images_in_folder(input_folder, output_folder):
 input_root_folder = "E:/Collage/NN/Project/fonts-dataset"
 output_root_folder = "E:/Collage/NN/Project/output"
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
+    process_images_in_folder(input_root_folder, output_root_folder)
+    # preprocess(imgPath,
+
 
 
 # #   hough_transforms(image=cv2.imread(imgPath))
