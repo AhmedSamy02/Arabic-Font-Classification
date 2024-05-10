@@ -11,9 +11,10 @@ from scipy.stats import mode
 from scipy.ndimage import median_filter
 from skimage import  filters , io
 import matplotlib.pyplot as plt
+from skimage.filters import gaussian
 
  
-pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'  # your path may be different
+pytesseract.pytesseract.tesseract_cmd = '"C:/Program Files/Tesseract-OCR/tesseract.exe'  # your path may be different
 
 imgPath = '899.jpeg'
 
@@ -58,7 +59,7 @@ def rotate_image(image, angle):
     
     return result
 
-def hough_transforms(image):
+def hough_transforms(image) -> np.ndarray[os.Any, np.dtype[os.Any]]:
     # Read the image
     # image = cv2.imread(image_path)
     
@@ -146,8 +147,8 @@ def pytesseract_orientation(image_path):
 def preprocess(input_path, output_path):
     image = cv2.imread(input_path)
     output_image=filters.median(image)
-
-    hough_out = hough_transforms(image=output_image)
+    output_image_gaussian = gaussian(output_image, sigma=1) # Adjust sigma according to the blur strength
+    hough_out = hough_transforms(image=output_image_gaussian)
     correct_orient = pytesseract_orientation(hough_out)
     cv2.imwrite(output_path, correct_orient)
 
@@ -181,7 +182,8 @@ input_root_folder = "E:/Collage/NN/Project/fonts-dataset"
 output_root_folder = "E:/Collage/NN/Project/output"
 
 if __name__ == '__main__':
-    process_images_in_folder(input_root_folder, output_root_folder)
+    # process_images_in_folder(input_root_folder, output_root_folder)
+    preprocess('images/train/Marhey/37.jpeg', 'output.jpeg')
     # preprocess(imgPath,
 
 
