@@ -148,12 +148,13 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
-
+images/generated_train/Marehy/*.png
 # Cython debug symbols
 cython_debug/
 *.png
 *.jpg
 *.jpeg
+*.pkl
 *.docx
 *.pdf
 # PyCharm
