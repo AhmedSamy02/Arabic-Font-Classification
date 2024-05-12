@@ -154,7 +154,7 @@ cython_debug/
 *.png
 *.jpg
 *.jpeg
-*.pkl
+
 *.docx
 *.pdf
 # PyCharm
