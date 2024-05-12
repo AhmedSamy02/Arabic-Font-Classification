@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="31d1c0b5-ebb7-4125-a946-7cc36d7c1780" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/images/generated_train/IBM_Plex_Sans_Arabic/IBM_Plex_Sans_Arabic_001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/IBM_Plex_Sans_Arabic/IBM_Plex_Sans_Arabic_002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/IBM_Plex_Sans_Arabic/IBM_Plex_Sans_Arabic_003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/IBM_Plex_Sans_Arabic/IBM_Plex_Sans_Arabic_004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/IBM_Plex_Sans_Arabic/IBM_Plex_Sans_Arabic_005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Lemonada/Lemonada_001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Lemonada/Lemonada_002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Lemonada/Lemonada_003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Lemonada/Lemonada_004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Lemonada/Lemonada_005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Marehy/Marehy_001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Marehy/Marehy_002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Marehy/Marehy_003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Marehy/Marehy_004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Marehy/Marehy_005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Scheherazade_New/Scheherazade_New_001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Scheherazade_New/Scheherazade_New_002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Scheherazade_New/Scheherazade_New_003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Scheherazade_New/Scheherazade_New_004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/generated_train/Scheherazade_New/Scheherazade_New_005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing_lpq.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/testing_lpq.ipynb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2fPRKjg2Sp4BzxBQZf8HZ1nXSSz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/Users/20112/Desktop/Faculty/Projects/Graphics/Al-Dofda3a",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31d1c0b5-ebb7-4125-a946-7cc36d7c1780" name="Changes" comment="" />
+      <created>1713700665477</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713700665477</updated>
+      <workItem from="1713700667169" duration="31000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

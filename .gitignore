@@ -148,10 +148,15 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
-
+images/generated_train/Marehy/*.png
 # Cython debug symbols
 cython_debug/
-
+*.png
+*.jpg
+*.jpeg
+*.pkl
+*.docx
+*.pdf
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
