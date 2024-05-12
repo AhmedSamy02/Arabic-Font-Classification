@@ -1,18 +1,14 @@
-import re
 import cv2
 import os
 import numpy as np
 from skimage.transform import hough_line, hough_line_peaks
 from skimage.feature import canny
-from skimage.color import rgb2gray
-from skimage.filters import threshold_otsu
+
 import pytesseract
 from pytesseract import Output
 from scipy.stats import mode
 from scipy.ndimage import median_filter
 from skimage import  filters , io
-import matplotlib.pyplot as plt
-from skimage.filters import gaussian
 
  
 pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'  # your path may be different
@@ -191,7 +187,19 @@ def preprocess(input_path, output_path):
     # cv2.imwrite('after_hough.jpeg', hough_out)
     correct_orient = pytesseract_orientation(hough_out)
     cv2.imwrite(output_path, correct_orient)
-
+def preprocess_image(image):
+    salt_and_pepper_present = detect_salt_and_pepper(image)
+    if salt_and_pepper_present == True :
+        output_image = filters.median(image)
+    else : 
+        output_image = image
+    # cv2.imwrite('after_median.jpeg', output_image)
+    binary_image = binarizeImage(output_image)
+    # cv2.imwrite('after_color.jpeg', binary_image)
+    hough_out = hough_transforms(image=binary_image)
+    # cv2.imwrite('after_hough.jpeg', hough_out)
+    correct_orient = pytesseract_orientation(hough_out)
+    return correct_orient
 def process_images_in_folder(input_folder, output_folder):
     # Create output folder if it doesn't exist
     if not os.path.exists(output_folder):
